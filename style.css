@@ -1,9 +1,9 @@
-/* ===== COLORS (change the blue here, once) ===== */
+/* ===== COLORS (change the green here, once) ===== */
 :root {
-    --primary: #14376b;
-    /* dark blue: header and all buttons */
-    --primary-hover: #1f4e99;
-    /* slightly lighter blue for hover */
+    --primary: #1b7f3b;
+    /* green: header and all buttons */
+    --primary-hover: #25a04d;
+    /* slightly lighter green for hover */
     --disabled-bg: #d5d9df;
     /* light gray for disabled buttons */
     --disabled-text: #7a808a;
@@ -109,7 +109,7 @@ section h2 {
 
 /* ===== BUTTONS ===== */
 
-/* All buttons: dark blue with white text when enabled */
+/* All buttons: green with white text when enabled */
 button {
     background-color: var(--primary);
     color: white;
