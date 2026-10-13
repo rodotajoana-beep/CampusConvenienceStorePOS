@@ -26,8 +26,33 @@ header h1 {
 main {
     display: grid;
     grid-template-columns: 2fr 1fr;
+    grid-template-areas:
+        "products cart"
+        "products summary"
+        "payment  receipt";
     gap: 16px;
     padding: 16px 24px;
+    align-items: start;
+}
+
+#product-section {
+    grid-area: products;
+}
+
+#cart-section {
+    grid-area: cart;
+}
+
+#summary-section {
+    grid-area: summary;
+}
+
+#payment-section {
+    grid-area: payment;
+}
+
+#receipt-section {
+    grid-area: receipt;
 }
 
 /* Each section looks like a white card */
@@ -43,11 +68,6 @@ section h2 {
     font-size: 1.15rem;
     border-bottom: 2px solid #2c3e50;
     padding-bottom: 8px;
-}
-
-/* Product List takes the full left column */
-#product-section {
-    grid-row: span 2;
 }
 
 /* Product cards */
@@ -89,7 +109,13 @@ button:hover {
     background-color: #1a252f;
 }
 
-/* Success message (hidden when empty) */
+/* Disabled buttons (used when the transaction is locked) */
+button:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
+}
+
+/* Success message above the cart (hidden when empty) */
 .message {
     min-height: 24px;
     margin-bottom: 8px;
@@ -138,7 +164,95 @@ button:hover {
     background-color: #96281b;
 }
 
-/* Empty cart text */
+/* Empty text (cart and receipt) */
 .empty-text {
     color: #777;
+}
+
+/* Payment section */
+#payment-section label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+#payment-input {
+    width: 100%;
+    padding: 8px;
+    font-size: 1rem;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+}
+
+#payment-input:disabled {
+    background-color: #eee;
+}
+
+.button-row {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.secondary-btn {
+    background-color: #7f8c8d;
+}
+
+.secondary-btn:hover {
+    background-color: #636e6f;
+}
+
+/* Payment messages */
+.payment-message {
+    margin-top: 12px;
+    min-height: 24px;
+    font-weight: bold;
+}
+
+.payment-message.error {
+    color: #c0392b;
+}
+
+.payment-message.success {
+    color: #27ae60;
+}
+
+/* Receipt */
+.receipt-box {
+    border: 1px dashed #666;
+    padding: 12px;
+    background-color: #fffef8;
+    font-size: 0.9rem;
+}
+
+.receipt-box h3 {
+    margin: 0 0 8px 0;
+    text-align: center;
+}
+
+.receipt-box p {
+    margin: 4px 0;
+}
+
+.receipt-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 8px 0;
+}
+
+.receipt-table th,
+.receipt-table td {
+    border-bottom: 1px dotted #999;
+    padding: 4px;
+    text-align: left;
+}
+
+.receipt-totals p {
+    display: flex;
+    justify-content: space-between;
+}
+
+.receipt-thanks {
+    text-align: center;
+    margin-top: 10px;
 }

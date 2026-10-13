@@ -42,11 +42,22 @@
         <!-- Section 4: Payment -->
         <section id="payment-section">
             <h2>Payment</h2>
+            <label for="payment-input">Amount Paid (Cash)</label>
+            <input type="text" id="payment-input" inputmode="decimal" placeholder="e.g. 100.00" autocomplete="off">
+            <div class="button-row">
+                <button id="confirm-btn">Confirm Payment</button>
+                <button id="new-btn" class="secondary-btn">New Transaction</button>
+            </div>
+            <!-- Error or success message for payment (no alert boxes) -->
+            <div id="payment-message" class="payment-message"></div>
         </section>
 
         <!-- Section 5: Receipt -->
         <section id="receipt-section">
             <h2>Receipt</h2>
+            <div id="receipt">
+                <p class="empty-text">No receipt yet. Complete a payment to see it here.</p>
+            </div>
         </section>
     </main>
 
