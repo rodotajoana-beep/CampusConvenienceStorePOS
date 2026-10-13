@@ -255,3 +255,8 @@ button:disabled {
     text-align: center;
     margin-top: 10px;
 }
+
+.summary-list {
+    padding-left: 18px;
+    margin: 0 0 12px 0;
+}

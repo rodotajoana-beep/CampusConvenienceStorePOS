@@ -28,6 +28,7 @@ const confirmBtn = document.getElementById("confirm-btn");
 const newBtn = document.getElementById("new-btn");
 const paymentMessage = document.getElementById("payment-message");
 const receiptEl = document.getElementById("receipt");
+const summaryItemsEl = document.getElementById("summary-items");
 
 // Used to clear the "added to cart" message after a short time
 let messageTimer = null;
@@ -198,6 +199,19 @@ function renderCart() {
 
         html += "</table>";
         cartItems.innerHTML = html;
+    }
+
+    // List every cart item in the Order Summary
+    if (cart.length === 0) {
+        summaryItemsEl.innerHTML = '<p class="empty-text">No items yet.</p>';
+    } else {
+        let summaryHtml = '<ul class="summary-list">';
+        cart.forEach(function (item) {
+            summaryHtml += "<li>" + item.name + " x " + item.quantity +
+                " = " + formatPeso(item.price * item.quantity) + "</li>";
+        });
+        summaryHtml += "</ul>";
+        summaryItemsEl.innerHTML = summaryHtml;
     }
 
     // Update the Order Summary
