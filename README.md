@@ -73,4 +73,4 @@ No installation, server, or internet connection is needed.
 
 ## Author
 
-Your Name — Your Section, IT 415 (First Semester, S.Y. 2026–2027)
+ANG, GABRIEL; RODOTA, JOANA - IT 415 (First Semester, S.Y. 2026–2027)
