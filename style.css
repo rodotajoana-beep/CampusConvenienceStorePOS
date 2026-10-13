@@ -88,3 +88,57 @@ button {
 button:hover {
     background-color: #1a252f;
 }
+
+/* Success message (hidden when empty) */
+.message {
+    min-height: 24px;
+    margin-bottom: 8px;
+    color: #27ae60;
+    font-weight: bold;
+}
+
+/* Cart table */
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.cart-table th,
+.cart-table td {
+    border-bottom: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.cart-table th {
+    background-color: #f0f0f0;
+}
+
+/* Smaller buttons inside the cart */
+.cart-table button {
+    padding: 4px 10px;
+}
+
+.qty-cell {
+    white-space: nowrap;
+}
+
+.qty-number {
+    display: inline-block;
+    min-width: 24px;
+    text-align: center;
+}
+
+/* Red Remove button */
+.remove-btn {
+    background-color: #c0392b;
+}
+
+.remove-btn:hover {
+    background-color: #96281b;
+}
+
+/* Empty cart text */
+.empty-text {
+    color: #777;
+}
