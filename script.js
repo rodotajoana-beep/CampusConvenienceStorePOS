@@ -227,6 +227,7 @@ function setLocked(locked) {
     isLocked = locked;
     paymentInput.disabled = locked;
     confirmBtn.disabled = locked;
+    newBtn.disabled = !locked;   // enabled only after a completed payment
 
     // Enable or disable every "Add to Cart" button
     document.querySelectorAll(".add-btn").forEach(function (button) {
@@ -322,8 +323,13 @@ function confirmPayment() {
     // Valid payment: Change = Amount Paid - Total Amount
     const change = (paidCents - totalCents) / 100;
 
-    setLocked(true);   // lock the cart and payment input
-    showPaymentMessage("Payment confirmed! Change: " + formatPeso(change) + ".", "success");
+    setLocked(true);   // lock the cart and payment input, enable new transaction
+    showPaymentMessage(
+        "Payment confirmed! Total: " + formatPeso(totalAmount) +
+        " | Paid: " + formatPeso(amountPaid) +
+        " | Change: " + formatPeso(change),
+        "success"
+    );
     generateReceipt(amountPaid, totalAmount, change);
 }
 
@@ -377,4 +383,4 @@ paymentInput.addEventListener("keydown", function (event) {
 
 // Show the products and the (empty) cart when the page loads
 displayProducts();
-renderCart();
+setLocked(false); 
